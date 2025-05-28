@@ -1,0 +1,68 @@
+.card__container {
+	width: 280px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 2);
+	padding: 10px;
+	color: black;
+	text-decoration: none;
+	position: relative;
+	/* display: flex; */
+}
+.product__flexed {
+	display: flex;
+	width: 100%;
+	padding: 25px;
+	gap: 50px;
+}
+/* .product_desc{
+    width: 35%;
+} */
+.card__container:hover .button {
+	display: block;
+}
+.card__container img {
+	padding: 10px;
+	width: 100px;
+	height: 100px;
+	object-fit: contain;
+}
+.button {
+	display: none;
+	padding: 5px 10px;
+	font-weight: 700;
+	border: none;
+	cursor: pointer;
+	/* background-color: var(--primary-color); */
+	width: 50%;
+	margin-left: 30%;
+	margin-bottom: 3%;
+	border-radius: 30px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	background-color: #e07c09;
+}
+.button_flexed {
+	width: 20%;
+	position: relative;
+	margin-left: 20%;
+}
+.button :hover {
+	background-color: var(--primary-shade);
+}
+.rating {
+	display: flex;
+	align-items: center;
+	padding: 10px 0px;
+}
+.product__container {
+	display: grid;
+	/* grid-template-columns: repeat(auto-fill,minmax 250px); */
+	grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
+	max-width: 1450px;
+	margin: 100px auto 100px auto;
+	gap: 35px;
+	justify-items: center;
+}
+.product__container section {
+	margin: 0 auto;
+}
