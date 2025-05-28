@@ -49,25 +49,3 @@ export default Results
 
 
 
-
-// function Results() {
-//   const [results,setResults] = useState([]);
-//   const{categoryName} = useParams()
-//   useEffect(() =>)
-// axios.get(`${productUrl}/Category/${categoryName}`)
-// .then((res)=>{
-//   setResults(res.data)
-// }).catch(error)
-
-
- 
-//   return (
-//     <LayOut>
-//       <div>
-//         Results
-//       </div>
-//       </LayOut>
-//   )
-// }
-
-
