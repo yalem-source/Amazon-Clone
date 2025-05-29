@@ -1,6 +1,6 @@
 //
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Landing from "../Components/Pages/Landing/Landing";
 import SignIn from "../Components/Pages/Auth/SignUp";
 import Payment from "../Components/Pages/Payment/Payment";
