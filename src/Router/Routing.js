@@ -13,7 +13,7 @@ import Results from "../Components/Results/Results";
 
 function Routing() {
 	return (
-		<Router>
+		// <Router>
 			<Routes>
 				<Route path="/" element={<Landing />} />
 				<Route path="/auth" element={<SignIn />} />
@@ -24,7 +24,7 @@ function Routing() {
 				<Route path="/cart" element={<Cart />} />
 				<Route path="*" element={<div>404 - Page Not Found</div>} />
 			</Routes>
-		</Router>
+		// </Router>
 	);
 }
 
