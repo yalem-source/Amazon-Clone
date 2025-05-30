@@ -8,20 +8,12 @@ import { DataProvider } from "./Components/DataProvider/DataProvider";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
-	<>
+	<React.StrictMode>
 		{/* <BrowserRouter> */}
 		<DataProvider reducer={reducer} initialState={initialState}>
 			<App />
 		</DataProvider>
 		{/* </BrowserRouter> */}
-	</>
+	</React.StrictMode>
 );
 
-// 	<React.StrictMode>
-// 		{/* <BrowserRouter> */}
-// 		<DataProvider reducer={reducer} initialState={initialState}>
-// 			<App />
-// 		</DataProvider>
-// 		{/* </BrowserRouter> */}
-// 	</React.StrictMode>
-// );

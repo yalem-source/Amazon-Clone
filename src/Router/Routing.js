@@ -1,6 +1,6 @@
 //
 import React from "react";
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Landing from "../Components/Pages/Landing/Landing";
 import SignIn from "../Components/Pages/Auth/SignUp";
 import Payment from "../Components/Pages/Payment/Payment";
@@ -8,6 +8,7 @@ import Orders from "../Components/Pages/Orders/Orders";
 // import Cart from "../Components/Pages/Cart/Cart";
 import Cart from "../Components/Pages/Cart/Cart";
 import ProductDetail from "../Components/ProductDetail/ProductDetail";
+
 import Results from "../Components/Results/Results";
 
 function Routing() {
