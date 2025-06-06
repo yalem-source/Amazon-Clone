@@ -1,0 +1,137 @@
+/* .Payment__header {
+	padding: 20px;
+	text-align: center;
+	font-size: 24px;
+	background-color: rgb(234, 237, 237);
+}
+.Payment {
+	padding: 30px;
+}
+.flex {
+	display: flex;
+	gap: 20px;
+	padding: 30px;
+}
+.flex h3 {
+	min-width: 300px;
+}
+.flex img {
+	width: 80px !important;
+}
+.flex div {
+	height: auto !important;
+}
+.payment__card__container {
+	max-width: 350px;
+	width: 100px;
+}
+.classes.payment__details {
+	font-size: 20px;
+}
+.Payment__price {
+	padding: 20px;
+}
+.Payment__price > div {
+	display: flex;
+	font-size: 16px;
+	gap: 10px;
+}
+.classes.payment__details button:hover{
+    background-color: var(--primary-shade);
+
+} */
+
+/* Payment.module.css */
+
+/* Below is from deepseek */
+
+.Payment__header {
+	text-align: center;
+	padding: 1rem;
+	font-size: 1.5rem;
+	font-weight: bold;
+	background-color: #f3f3f3;
+	border-bottom: 1px solid #ddd;
+}
+
+.flex {
+	display: flex;
+	padding: 1.5rem;
+	margin: 0 1rem;
+	border-bottom: 1px solid #ddd;
+}
+
+.flex h3 {
+	flex: 0.2;
+	font-size: 1.2rem;
+	margin-right: 2rem;
+}
+
+.flex > div {
+	flex: 0.8;
+}
+
+.payment__card__container {
+	width: 100%;
+	max-width: 500px;
+}
+
+.payment__details {
+	background: white;
+	padding: 1.5rem;
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.Payment__price {
+	margin-top: 1.5rem;
+	border-top: 1px solid #ddd;
+	padding-top: 1rem;
+}
+
+.Payment__price div {
+	margin-bottom: 1rem;
+}
+
+.Payment__price p {
+	font-size: 1.1rem;
+	font-weight: bold;
+}
+
+.Payment__price button {
+	width: 100%;
+	padding: 0.8rem;
+	background: #f0c14b;
+	border: 1px solid;
+	border-color: #a88734 #9c7e31 #846a29;
+	color: #111;
+	font-weight: bold;
+	cursor: pointer;
+	border-radius: 4px;
+	transition: background 0.3s;
+}
+
+.Payment__price button:hover {
+	background: #ddb347;
+}
+
+/* Stripe CardElement styling */
+.StripeElement {
+	padding: 1rem;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	margin: 1rem 0;
+	background: white;
+}
+.loading {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	justify-content: center;
+	color: rgb(52, 52, 52);
+}
+/* @media screen and (max-width: 768px) {
+	.flex {
+		flex-direction: column;
+	}
+} */

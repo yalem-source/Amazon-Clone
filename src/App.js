@@ -1,26 +1,29 @@
-// import { App } from "../src/App";
-// import './App.css';
-// import Header from './Components/Header/Header';
-// import Header from './Components/Header/Header'
-// import Category from './Components/Category/Category';
-// import Product from './Components/Product/Product';
-import Routing from "./Router/Routing"
-// import LayOut from './Components/LayOut/LayOut';
+import React, { useContext, useEffect } from "react";
+import Routering from "./Router/Routing";
+import { DataContext } from "./Components/DataProvider/DataProvider";
+import { Type } from "./Utility/Actiontype";
+import { auth } from "./Utility/firebase";
 
+function App() {
+	const [{ user }, dispatch] = useContext(DataContext);
 
+	useEffect(() => {
+		auth.onAuthStateChanged((authUser) => {
+			if (authUser) {
+				console.log(authUser);
+				dispatch({
+					type: Type.SET_USER,
+					user: authUser,
+				});
+			} else {
+				dispatch({
+					type: Type.SET_USER,
+					user: null,
+				});
+			}
+		});
+	}, []);
 
-
-function App(){
-    return(
-        <>
-        {/* < Header/>
-        <Carousel/>
-        <Category/>
-        <Product/> */}
-        <Routing/>
-    {/* <LayOut/> */}
-        </>
-
-    )
+	return <Routering />;
 }
 export default App;

@@ -39,9 +39,7 @@ function ProductCard({ product, flex, renderDesc, renderAdd }) {
 				</div>
 				{renderAdd && (
 					<button
-						className={`${classes.button} ${
-							flex ? classes.button_flexed : ""
-						}`}
+						className={`${classes.button} ${flex ? classes.button_flexed : ""}`}
 						onClick={addToCart}
 					>
 						Add to cart

@@ -1,0 +1,76 @@
+.Login {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+    
+    
+}
+.Login img {
+	margin: 30px auto;
+	object-fit: contain;
+	width: 100px;
+}
+.Login__container {
+	width: 300px;
+	display: flex;
+	flex-direction: column;
+	border-radius: 5px;
+	border: 1px solid lightgray;
+	padding: 20px;
+    
+}
+.Login__container h1 {
+	font-size: 25px;
+	margin: 20px;
+}
+.Login__container form {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+.Login__container form div {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+.Login__container form input {
+	margin-bottom: 10px;
+	padding: 8px 16px;
+	background-color: white;
+	width: 100px;
+	border: none;
+	border: 1px solid gray;
+	border-radius: 3px;
+}
+.Login__container form input:focus {
+	outline: 2px solid skyblue;
+}
+.Login__signInButton{
+	border: none;
+	background-color: #f0c14b;
+	border-radius: 5px;
+	width: 300px;
+	height: 30px;
+	margin-top: 10px;
+	cursor: pointer;
+}
+.Login__container p {
+	padding: 10px 0px;
+	font-size: 14px;
+}
+.Login__registerButton:hover {
+	background-color: (--primary-shade);
+}
+
+.Login__registerButton {
+	border: none;
+	border-radius: 5px;
+	width: 300px;
+	height: 30px;
+	margin-top: 10px;
+	cursor: pointer;
+}
+.Login__registerButton {
+	background-color: lightgray;
+}  
