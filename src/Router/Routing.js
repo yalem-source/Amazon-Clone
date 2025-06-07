@@ -1,7 +1,7 @@
 //
 import React from "react";
 import {
-	BrowserRouter as Router,
+	HashRouter as Router,
 	Routes,
 	Route,
 	redirect,
@@ -24,39 +24,39 @@ const stripePromise = loadStripe(
 
 function Routing() {
 	return (
-		// <Router>
-		<Routes>
-			<Route path="/" element={<Landing />} />
-			<Route path="/auth" element={<Auth />} />
-			<Route
-				path="/Payments"
-				element={
-					<ProtectedRoute msg={"you must log in to pay"}>
-						redirect={"/payments"}
-						<Elements stripe={stripePromise}>
-							<Payment />
-						</Elements>
-					</ProtectedRoute>
-				}
-			/>
-			<Route
-				path="/orders"
-				element={
-					<ProtectedRoute
-						msg={"you must log in to to access your orders"}
-						redirect={"/payments"}
-					>
-						<Orders />
-					</ProtectedRoute>
-				}
-			/>
-			<Route path="/category/:categoryName" element={<Results />} />
-			<Route path="/products/:productId" element={<ProductDetail />} />
-			<Route path="/cart" element={<Cart />} />
-			<Route path="*" element={<div>404 - Page Not Found</div>} />
-		</Routes>
-		//{" "}
-		// </Router>
+		<Router>
+			<Routes>
+				<Route path="/" element={<Landing />} />
+				<Route path="/auth" element={<Auth />} />
+				<Route
+					path="/Payments"
+					element={
+						<ProtectedRoute msg={"you must log in to pay"}>
+							redirect={"/payments"}
+							<Elements stripe={stripePromise}>
+								<Payment />
+							</Elements>
+						</ProtectedRoute>
+					}
+				/>
+				<Route
+					path="/orders"
+					element={
+						<ProtectedRoute
+							msg={"you must log in to to access your orders"}
+							redirect={"/payments"}
+						>
+							<Orders />
+						</ProtectedRoute>
+					}
+				/>
+				<Route path="/category/:categoryName" element={<Results />} />
+				<Route path="/products/:productId" element={<ProductDetail />} />
+				<Route path="/cart" element={<Cart />} />
+				<Route path="*" element={<div>404 - Page Not Found</div>} />
+			</Routes>
+			// //{" "}
+		</Router>
 	);
 }
 
