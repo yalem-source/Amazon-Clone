@@ -33,7 +33,7 @@
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
 		"build": "CI=false react-scripts build",
-        "build:ci": "react-scripts build"
+		"build:ci": "react-scripts build"
 	},
 	"eslintConfig": {
 		"extends": [
