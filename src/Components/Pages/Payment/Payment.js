@@ -305,11 +305,15 @@ import { useNavigate } from "react-router-dom";
 import { ClipLoader } from "react-spinners";
 import { Type } from "../../../Utility/Actiontype";
 
-function Payment({ total }) {
+function Payment() {
 	const [{ user, basket }, dispatch] = useContext(DataContext);
 	const totalItem = basket?.reduce((amount, item) => {
 		return item.amount + amount;
 	}, 0);
+	const total = basket.reduce(
+		(amount, item) => item.price * item.amount + amount,
+		0
+	);
 	const [cardError, setCardError] = useState(null);
 	const [processing, setProcessing] = useState(false);
 	const stripe = useStripe();
@@ -442,11 +446,15 @@ function Payment({ total }) {
 
 								<div className={classes.Payment__price}>
 									<div>
-										<span>
-											<p>
-												Total Order | <CurrencyFormat amount={total} />
-											</p>
+										<span style={{ display: "flex", gap: "10px" }}>
+											Total Order | <CurrencyFormat amount={total} />
+											         
 										</span>
+										{/* <span>
+											{/* <p> */}
+										{/* Total Order | <CurrencyFormat amount={total} /> */}
+										{/* </p> */}
+										{/* </span> */}
 									</div>
 									<button
 										type="submit"

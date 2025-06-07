@@ -80,31 +80,59 @@ import { DataContext } from "../../DataProvider/DataProvider";
 import classes from "./Orders.module.css";
 import { flex, order } from "@mui/system";
 import ProductCard from "../../Product/ProductCard";
+import {
+	collection,
+	doc,
+	onSnapshot,
+	query,
+	orderBy,
+} from "firebase/firestore";
 
 function Order() {
 	const [{ user }, dispatch] = useContext(DataContext);
 	const [orders, setOrders] = useState([]);
 
+	// useEffect(() => {
+	// 	if (user) {
+	// 		db.collection("users")
+	// 			.doc(user.uid)
+	// 			.collection("orders")
+	// 			.orderBy("created", "desc")
+	// 			.onSnapshot((snapshot) => {
+	// 				console.log(snapshot);
+	// 				setOrders(
+	// 					snapshot.docs.map((doc) => ({
+	// 						id: doc.id,
+	// 						data: doc.data(),
+	// 					}))
+	// 				);
+	// 			});
+	// 	} else {
+	// 		setOrders([]);
+	// 	}
+	// }, []);
+
 	useEffect(() => {
 		if (user) {
-			db.collection("users")
-				.doc(user.uid)
-				.collection("orders")
-				.orderBy("created", "desc")
-				.onSnapshot((snapshot) => {
-					console.log(snapshot);
-					setOrders(
-						snapshot.docs.map((doc) => ({
-							id: doc.id,
-							data: doc.data(),
-						}))
-					);
-				});
+			const ordersRef = collection(doc(db, "users", user.uid), "orders");
+			const q = query(ordersRef, orderBy("created", "desc"));
+
+			const unsubscribe = onSnapshot(q, (snapshot) => {
+				console.log(snapshot);
+
+				const orders = snapshot.docs.map((doc) => ({
+					id: doc.id,
+					data: doc.data(),
+				}));
+				setOrders(orders);
+			});
+
+			return () => unsubscribe(); // cleanup listener on unmount
 		} else {
+			console.log("user ID not found!");
 			setOrders([]);
 		}
-	}, []);
-
+	}, [user]);
 	return (
 		<LayOut>
 			<section className={classes.container}>

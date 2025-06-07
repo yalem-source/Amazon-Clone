@@ -24,13 +24,38 @@
 	font-weight: bold;
 	color: rgb(9, 132, 209);
 }
-
+/* 
 .category__container {
 	position: relative;
 	margin-top: -10%;
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+	grid-template-columns: repeat(4, 1fr);
 	gap: 50px;
 	margin-right: auto;
 	place-items: center;
+} */
+
+.category__container {
+	position: relative;
+	margin-top: -120px;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	max-width: 1600px;
+	place-items: center;
+	gap: 30px;
+	margin: auto;
+}
+
+/* 👇 2 items per row on mobile */
+@media screen and (max-width: 576px) {
+	.category__container {
+		grid-template-columns: repeat(2, 1fr);
+		margin-top: 0;
+		padding: 10px;
+		gap: 15px;
+	}
+
+	.category {
+		width: 90%;
+	}
 }
